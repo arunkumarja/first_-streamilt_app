@@ -13,7 +13,7 @@ streamlit.dataframe(my_fruit_list)
 streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
 
 my_fruit_list = my_fruit_list.set_index('Fruit')
-fruits_selected=streamlit.multiselect("pick some fruits:",list( my_fruit_list.index),['cantaloupe'])
+fruits_selected=streamlit.multiselect("pick some fruits:",list( my_fruit_list.index),['Cantaloupe'])
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 streamlit.dataframe(fruits_to_show)   
@@ -29,7 +29,7 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
 streamlit.dataframe(fruityvice_normalized)
 
-fruit_choice = streamlit.text_input('What fruit would you like information about?','orange')
+fruit_choice = streamlit.text_input('What fruit would you like information about?','Orange')
 streamlit.write('The user entered ', fruit_choice)
 
 import snowflake.connector
@@ -53,7 +53,7 @@ my_data_rows = my_cur.fetchall()
 streamlit.text("the furit load list contains")
 streamlit.text(my_data_rows)
 
-fruit_choice = streamlit.text_input('What fruit would you like information about?','cantaloupe')
+fruit_choice = streamlit.text_input('What fruit would you like information about?','Cantaloupe')
 streamlit.write('The user entered ', fruit_choice)
 
 my_cur.execute("insert into fruit_load_list values('from streamlit')")
