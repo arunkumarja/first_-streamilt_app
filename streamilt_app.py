@@ -1,4 +1,7 @@
 import streamlit
+import pandas
+import requests
+from urllib.error import URLError
 streamlit.title('🥑bulid your own fruit soomthie🥣')
 
 streamlit.header('🥣 Breakfast menu')
@@ -6,8 +9,7 @@ streamlit.text('🥗omega 3 & blueberry oatemai')
 streamlit.text('🐔omelt & offoil')
 streamlit.text('🥑hard-boiled')
 
-
-import pandas 
+#import pandas 
 my_fruit_list = pandas.read_csv("https://uni-lab-files.s3.us-west-2.amazonaws.com/dabw/fruit_macros.txt")
 streamlit.dataframe(my_fruit_list)
 streamlit.multiselect("Pick some fruits:", list(my_fruit_list.index))
@@ -17,8 +19,9 @@ fruits_selected=streamlit.multiselect("pick some fruits:",list( my_fruit_list.in
 fruits_to_show = my_fruit_list.loc[fruits_selected]
 
 streamlit.dataframe(fruits_to_show)   
+streamlit.stop()
 
-import requests
+#import requests
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/Orange")
 streamlit.text(fruityvice_response)
 
