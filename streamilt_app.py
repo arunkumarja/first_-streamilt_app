@@ -1,5 +1,5 @@
 import streamlit
-streamlit.title('My parents new health diner')
+streamlit.title('🥑bulid your own fruit soomthie🥣')
 
 streamlit.header('🥣 Breakfast menu')
 streamlit.text('🥗omega 3 & blueberry oatemai')
@@ -29,7 +29,7 @@ fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
 # write your own comment - what does this do?
 streamlit.dataframe(fruityvice_normalized)
 
-fruit_choice = streamlit.text_input('What fruit would you like information about?','Kiwi')
+fruit_choice = streamlit.text_input('What fruit would you like information about?','orange')
 streamlit.write('The user entered ', fruit_choice)
 
 import snowflake.connector
@@ -53,7 +53,7 @@ my_data_rows = my_cur.fetchall()
 streamlit.text("the furit load list contains")
 streamlit.text(my_data_rows)
 
-fruit_choice = streamlit.text_input('What fruit would you like information about?','jackfruit')
+fruit_choice = streamlit.text_input('What fruit would you like information about?','canteloupe')
 streamlit.write('The user entered ', fruit_choice)
 
 my_cur.execute("insert into fruit_load_list values('from streamlit')")
